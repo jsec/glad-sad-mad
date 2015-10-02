@@ -1,0 +1,35 @@
+.row
+  .col-lg-4
+    h3 Glad
+    ul.list-group
+      li.list-group-item.list-group-item-success What went well this sprint?
+      li.list-group-item.list-group-item-success What improved over last sprint?
+  .col-lg-4
+    h3 Sad
+    ul.list-group
+      li.list-group-item.list-group-item-info What could have gone better this sprint?
+      li.list-group-item.list-group-item-info If you could do anything differently this sprint, what would it be?
+  .col-lg-4
+    h3 Mad
+    ul.list-group
+      li.list-group-item.list-group-item-danger What failed this sprint?
+      li.list-group-item.list-group-item-danger What process needs to be fixed NOW?
+.row
+  .col-lg-4
+    | Glad Response:
+    .text-div
+      = textarea value=glad rows="10"
+    button.btn-sm.btn-success click="saveGladResponse"
+      | Save
+  .col-lg-4
+    | Sad Response:
+    .text-div
+      = textarea value=sad rows="10"
+    button.btn-sm.btn-info click="saveSadResponse"
+      | Save
+  .col-lg-4
+    | Mad Response:
+    .text-div
+      = textarea value=mad rows="10"
+    button.btn-sm.btn-danger click="saveMadResponse"
+      | Save

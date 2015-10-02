@@ -1,0 +1,31 @@
+ember-wormhole to="save-button-wormhole"
+  button.btn.navbar-btn.btn-sm.btn-success click="export"
+    | Export
+
+.row
+  .col-lg-4
+    .panel.panel-success
+      .panel-heading
+        h3.panel-title Glad
+      .panel-body
+        each gladResponses as |glad|
+          .well.well-sm
+            = glad.message
+
+  .col-lg-4
+    .panel.panel-info
+      .panel-heading
+        h3.panel-title Sad
+      .panel-body
+        each sadResponses as |sad|
+          .well.well-sm
+            = sad.message
+
+  .col-lg-4
+    .panel.panel-danger
+      .panel-heading
+        h3.panel-title Mad
+      .panel-body
+        each madResponses as |mad|
+          .well.well-sm
+            = mad.message

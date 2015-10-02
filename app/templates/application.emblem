@@ -1,0 +1,22 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      a.navbar-brand href="#" Sprint Retrospective
+
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li
+          a.nav-products href="#"
+            link-to "add" href=false tagName="li"
+              | Add Responses
+
+        li
+          a.nav-products href="#"
+            link-to "results" href=false tagName="li"
+              | Results
+
+      ul.nav.navbar-right
+        #save-button-wormhole
+
+.container.app-container
+  = outlet
