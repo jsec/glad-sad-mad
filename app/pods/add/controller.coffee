@@ -8,6 +8,10 @@ AddController = Ember.Controller.extend
       alert('Message cannot be blank')
       return
 
+    if type != 'glad' && !Ember.isPresent(howToImprove)
+      alert('How To Improve Is Required')
+      return
+
     response = @store.createRecord 'response',
       type:         type
       message:      message
