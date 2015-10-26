@@ -2,11 +2,12 @@
 `import DS from 'ember-data'`
 
 Response = DS.Model.extend
-  type:    DS.attr('string')
-  message: DS.attr('string')
+  type:         DS.attr('string')
+  message:      DS.attr('string')
+  howToImprove: DS.attr('string')
 
-  isGlad:  Ember.computed.equal('type', 'glad').readOnly()
-  isSad:   Ember.computed.equal('type', 'sad').readOnly()
-  isMad:   Ember.computed.equal('type', 'mad').readOnly()
+  isGlad:  Ember.computed.equal('type', 'glad')
+  isSad:   Ember.computed.equal('type', 'sad')
+  isMad:   Ember.computed.equal('type', 'mad')
 
 `export default Response`
