@@ -8,7 +8,7 @@ AddController = Ember.Controller.extend
       alert('Message cannot be blank')
       return
 
-    if type != 'glad' && !howToImprove?
+    if type != 'glad' && !Ember.isPresent(howToImprove)
       alert('How To Improve Is Required')
       return
 
