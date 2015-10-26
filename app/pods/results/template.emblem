@@ -19,7 +19,12 @@ ember-wormhole to="save-button-wormhole"
       .panel-body
         each sadResponses as |sad|
           .well.well-sm
-            = sad.message
+            div
+              strong Problem:&nbsp;
+              | {{sad.message}}
+            div
+              strong Improvement:&nbsp;
+              | {{sad.howToImprove}}
 
   .col-lg-4
     .panel.panel-danger
@@ -28,4 +33,9 @@ ember-wormhole to="save-button-wormhole"
       .panel-body
         each madResponses as |mad|
           .well.well-sm
-            = mad.message
+            div
+              strong Problem:&nbsp;
+              | {{mad.message}}
+            div
+              strong Improvement:&nbsp;
+              | {{mad.howToImprove}}

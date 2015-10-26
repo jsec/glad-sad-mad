@@ -1,7 +1,7 @@
 `import Ember from 'ember'`
 
 AddController = Ember.Controller.extend
-  _saveResponse: (type, message) ->
+  _saveResponse: (type, message, howToImprove) ->
     message = message?.trim()
 
     if !message? or Ember.isEmpty(message)
@@ -9,23 +9,28 @@ AddController = Ember.Controller.extend
       return
 
     response = @store.createRecord 'response',
-      type:    type
-      message: message
+      type:         type
+      message:      message
+      howToImprove: howToImprove
 
-    response.save().then =>
+    response.save().then ->
       alert('Saved!')
 
   actions:
     saveGladResponse: ->
-      @_saveResponse 'glad', @get('glad')
+      @_saveResponse('glad', @get('glad'))
       @set 'glad', undefined
 
     saveSadResponse: ->
-      @_saveResponse 'sad', @get('sad')
-      @set 'sad', undefined
+      @_saveResponse('sad', @get('sad'), @get('sadImprovement'))
+      @setProperties
+        sad:            undefined
+        sadImprovement: undefined
 
     saveMadResponse: ->
-      @_saveResponse 'mad', @get('mad')
-      @set 'mad', undefined
+      @_saveResponse('mad', @get('mad'), @get('madImprovement'))
+      @setProperties
+        mad:            undefined
+        madImprovement: undefined
 
 `export default AddController`
