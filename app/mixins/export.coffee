@@ -1,6 +1,6 @@
-`import Ember from 'ember'`
+import Mixin from '@ember/object/mixin'
 
-ExportMixin = Ember.Mixin.create
+ExportMixin = Mixin.create
   addTypeHeader: (file, type) ->
     @_addRecordToFile(file, type)
 
@@ -21,4 +21,4 @@ ExportMixin = Ember.Mixin.create
   _addRecordToFile: (file, message) ->
     file.push(message + "\r\n")
 
-`export default ExportMixin`
+export default ExportMixin

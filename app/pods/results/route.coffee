@@ -1,7 +1,7 @@
-`import Ember from 'ember'`
+import Route from '@ember/routing/route'
 
-ResultsRoute = Ember.Route.extend
+ResultsRoute = Route.extend
   model: ->
     @store.findAll('response')
 
-`export default ResultsRoute`
+export default ResultsRoute

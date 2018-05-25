@@ -16,16 +16,13 @@
       li.list-group-item.list-group-item-danger What process needs to be fixed NOW?
 .row
   .col-lg-4
-    | Glad Response:
+    | What went well?
     .text-div
       = textarea class="form-control" value=glad rows="10"
-    | Idea for Improvement:
-    .text-div
-      = textarea class="form-control disabled" disabled="true" rows="10"
     button.btn-sm.btn-success click="saveGladResponse"
       | Save
   .col-lg-4
-    | Sad Response:
+    | What made you sad?
     .text-div
       = textarea class="form-control" value=sad rows="10"
     | Idea for Improvement:
@@ -34,7 +31,7 @@
     button.btn-sm.btn-info click="saveSadResponse"
       | Save
   .col-lg-4
-    | Mad Response:
+    | What made you mad?
     .text-div
       = textarea class="form-control" value=mad rows="10"
     | Idea for Improvement:

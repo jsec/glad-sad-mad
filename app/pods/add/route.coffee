@@ -1,5 +1,5 @@
-`import Ember from 'ember'`
+import Route from '@ember/routing/route'
 
-AddRoute = Ember.Route.extend()
+AddRoute = Route.extend()
 
-`export default AddRoute`
+export default AddRoute

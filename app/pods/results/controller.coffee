@@ -1,21 +1,9 @@
-`import Ember from 'ember'`
-`import ExportMixin from 'skeleton-app/mixins/export'`
+import Controller from '@ember/controller'
+import { filterBy } from '@ember/object/computed'
 
-ResultsController = Ember.Controller.extend ExportMixin,
-  actions:
-    export: -> @exportDataFile()
+ResultsController = Controller.extend
+  gladResponses: filterBy('model', 'isGlad', true)
+  sadResponses:  filterBy('model', 'isSad', true)
+  madResponses:  filterBy('model', 'isMad', true)
 
-  gladResponses: Ember.computed.filterBy('model', 'isGlad')
-  sadResponses:  Ember.computed.filterBy('model', 'isSad')
-  madResponses:  Ember.computed.filterBy('model', 'isMad')
-
-  exportDataFile: ->
-    file = []
-
-    for type in ['glad', 'sad', 'mad']
-      @addTypeHeader(file, type)
-      @addRecordsToFile(file, @get("#{type}Responses").mapBy('message'))
-
-    @saveFile(file)
-
-`export default ResultsController`
+export default ResultsController

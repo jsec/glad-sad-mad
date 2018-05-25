@@ -1,7 +1,3 @@
-ember-wormhole to="save-button-wormhole"
-  button.btn.navbar-btn.btn-sm.btn-success click="export"
-    | Export
-
 .row
   .col-lg-4
     .panel.panel-success
@@ -9,8 +5,9 @@ ember-wormhole to="save-button-wormhole"
         h3.panel-title Glad
       .panel-body
         each gladResponses as |glad|
-          .well.well-sm
-            = glad.message
+          .card.text-white.bg-success.mb3
+            .card-body
+                p = glad.message
 
   .col-lg-4
     .panel.panel-info
@@ -18,13 +15,14 @@ ember-wormhole to="save-button-wormhole"
         h3.panel-title Sad
       .panel-body
         each sadResponses as |sad|
-          .well.well-sm
-            div
-              strong Problem:&nbsp;
-              | {{sad.message}}
-            div
-              strong Improvement:&nbsp;
-              | {{sad.howToImprove}}
+          .card.text-white.bg-info.mb3
+            .card-body
+                div
+                  strong Problem:&nbsp;
+                  = sad.message
+                div
+                  strong Improvement:&nbsp;
+                  = sad.howToImprove
 
   .col-lg-4
     .panel.panel-danger
@@ -32,10 +30,11 @@ ember-wormhole to="save-button-wormhole"
         h3.panel-title Mad
       .panel-body
         each madResponses as |mad|
-          .well.well-sm
-            div
-              strong Problem:&nbsp;
-              | {{mad.message}}
-            div
-              strong Improvement:&nbsp;
-              | {{mad.howToImprove}}
+          .card.text-white.bg-danger.mb3
+            .card-body
+                div
+                  strong Problem:&nbsp;
+                  = mad.message
+                div
+                  strong Improvement:&nbsp;
+                  = mad.howToImprove

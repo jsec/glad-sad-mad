@@ -1,14 +1,15 @@
-`import Ember from 'ember'`
+import { isPresent, isEmpty } from '@ember/utils'
+import Controller from '@ember/controller'
 
-AddController = Ember.Controller.extend
+AddController = Controller.extend
   _saveResponse: (type, message, howToImprove) ->
     message = message?.trim()
 
-    if !message? or Ember.isEmpty(message)
+    if !message? or isEmpty(message)
       alert('Message cannot be blank')
       return
 
-    if type != 'glad' && !Ember.isPresent(howToImprove)
+    if type != 'glad' && !isPresent(howToImprove)
       alert('How To Improve Is Required')
       return
 
@@ -37,4 +38,4 @@ AddController = Ember.Controller.extend
         mad:            undefined
         madImprovement: undefined
 
-`export default AddController`
+export default AddController
